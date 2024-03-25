@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { API_KEY } from "../App";
+import { Link } from "react-router-dom";
 
 const CoinInfo = ({ image, name, symbol }) => {
   const [price, setPrice] = useState(null);
@@ -27,7 +28,14 @@ const CoinInfo = ({ image, name, symbol }) => {
               src={`https://www.cryptocompare.com${image}`}
               alt={`Small icon for ${name} crypto coin`}
             />
-            {name} <span className="tab"></span> ${price.USD} USD
+            {/* {name} <span className="tab"></span> ${price.USD} USD */}
+            <Link
+              style={{ color: 'white' }}
+              to={`/coinDetails/${symbol}`}
+              key={symbol}
+            >
+              {name} <span className="tab"></span> ${price.USD} USD
+            </Link>
           </li>
           ) : 
           <></>}

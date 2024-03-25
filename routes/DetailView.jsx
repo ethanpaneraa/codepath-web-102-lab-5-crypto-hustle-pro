@@ -1,13 +1,12 @@
 import React from "react";
+import CoinDetail from "../src/Components/coinDetail";
 
 
+export default function DetailView() {
 
-const DetailView = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <CoinDetail />
+        </>
     );
-  };
-  
-  export default DetailView;
+};
